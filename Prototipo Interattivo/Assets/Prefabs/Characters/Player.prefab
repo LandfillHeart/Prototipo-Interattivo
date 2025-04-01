@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 1328186897826251550}
   - component: {fileID: 3028035000747912257}
   - component: {fileID: 6654465274693733263}
+  - component: {fileID: 105523549970634721}
+  - component: {fileID: 5329339915716044732}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   cameraController: {fileID: 0}
+  playerEntity: {fileID: 5329339915716044732}
   cameraPivot: {fileID: 6524895029411998364}
 --- !u!54 &6654465274693733263
 Rigidbody:
@@ -169,7 +172,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -181,8 +184,37 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &105523549970634721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970982769331263155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0b41040d5832a4e9b14553161e414a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingSpeed: 3
+  sprintSpeed: 6
+  jumpHeight: 10
+  horizontalVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &5329339915716044732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970982769331263155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33b02b73ef793b43be9d19582390e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 105523549970634721}

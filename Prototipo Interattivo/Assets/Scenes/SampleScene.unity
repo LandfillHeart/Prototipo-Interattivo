@@ -1016,18 +1016,6 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 6524895029411998364, guid: 40814b67353cde24396ae1fa1560f8ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524895029411998364, guid: 40814b67353cde24396ae1fa1560f8ee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524895029411998364, guid: 40814b67353cde24396ae1fa1560f8ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7870177291063776315, guid: 40814b67353cde24396ae1fa1560f8ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.36

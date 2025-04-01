@@ -46,15 +46,15 @@ public class CameraController : MonoBehaviour
 		mouseDelta *= cameraSensitivity * Time.deltaTime;
 		player.transform.Rotate(new Vector3(0, mouseDelta.x, 0));
 
-		float newRot = player.CameraPivot.transform.rotation.eulerAngles.x + mouseDelta.y;
+		float newRot = player.CameraPivot.transform.rotation.eulerAngles.x - mouseDelta.y;
 		if (newRot > 0 && newRot < 85)
 		{
-			player.CameraPivot.Rotate(new Vector3(mouseDelta.y, 0, 0));
+			player.CameraPivot.Rotate(new Vector3(-mouseDelta.y, 0, 0));
 		}
 
 		if(newRot < 0 || newRot > 275)
 		{
-			player.CameraPivot.Rotate(new Vector3(mouseDelta.y, 0, 0));
+			player.CameraPivot.Rotate(new Vector3(-mouseDelta.y, 0, 0));
 		}
 	}
 }

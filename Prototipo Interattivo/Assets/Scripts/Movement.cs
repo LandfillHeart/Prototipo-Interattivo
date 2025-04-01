@@ -1,0 +1,130 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+public class Movement : MonoBehaviour
+{
+	[SerializeField] private float walkingSpeed = 1f;
+	[SerializeField] private float sprintSpeed = 3f;
+
+	[SerializeField] private float jumpHeight = 10f;
+
+	public Vector3 MovementDirection
+	{
+		get => movementDirection;
+		set => movementDirection = value;
+	}
+
+	public bool ShouldJump
+	{
+		set => shouldJump = value;
+	}
+
+	private Rigidbody rb;
+
+	private Vector3 movementDirection = Vector3.zero;
+
+	public Vector3 horizontalVelocity = Vector3.zero;
+
+	private bool shouldJump = false;
+
+	private Vector3 relativeVelocity = Vector3.zero;
+
+	public enum SpeedState
+	{
+		Walk,
+		Sprint
+	}
+
+	private SpeedState currentSpeedState;
+	public SpeedState CurrentSpeedState
+	{
+		get => currentSpeedState;
+		set => currentSpeedState = value;
+	}
+	private float currentMaxSpeed => currentSpeedState switch
+	{
+		SpeedState.Walk => walkingSpeed,
+		SpeedState.Sprint => sprintSpeed,
+		_ => walkingSpeed,
+	};
+
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+		currentSpeedState = SpeedState.Walk;
+	}
+
+	private void FixedUpdate()
+	{
+		relativeVelocity = Quaternion.Inverse(transform.rotation) * rb.linearVelocity;
+		horizontalVelocity.x = relativeVelocity.x;
+		horizontalVelocity.z = relativeVelocity.z;
+		// trying to prevent double jump inputs when spamming caused by frame vs fixed time
+		if (shouldJump)
+		{
+			shouldJump = false;
+			Jump();
+		}
+
+		Move(movementDirection);
+
+		// Unity gravity will always feel "floaty" because of exagerated jumps. Applies double gravity when falling
+		if (rb.linearVelocity.y < 0f)
+		{
+			rb.AddForce(Vector3.down * -Physics.gravity.y * 2, ForceMode.Acceleration);
+		}
+
+	}
+
+	private void Move(Vector2 inputDirection)
+	{
+		// translate Unity Input System value Vector2 into a Vector3 for horizontal movement
+		Vector3 direction = new Vector3(inputDirection.x, 0, inputDirection.y);
+		// do NOT use rb.velocity.magnitude, it takes into account vertical speed
+		// we don't want our calculations messed with by jumping
+		if (direction == Vector3.zero)
+		{
+			// try to force our stop when player stops pressing inputs - remove slide
+			rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude), ForceMode.VelocityChange);
+			return;
+		}
+
+		if (horizontalVelocity.magnitude > currentMaxSpeed)
+		{
+			// opposing force to prevent you from moving faster than a desired speed (and without altering rb.velocity directly!)
+			rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude - currentMaxSpeed), ForceMode.VelocityChange);
+			return;
+		}
+		rb.AddRelativeForce(direction.normalized * currentMaxSpeed, ForceMode.VelocityChange);
+	}
+
+	private void Jump()
+	{
+		if (!IsGrounded())
+		{
+			return;
+		}
+		Vector3 jumpDirection = new Vector3(0, 1, 0);
+		rb.AddForce(jumpDirection * jumpHeight, ForceMode.VelocityChange);
+	}
+
+	private bool IsGrounded()
+	{
+		return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+	}
+
+	public void ToggleSprint()
+	{
+		if(CurrentSpeedState == SpeedState.Walk)
+		{
+			CurrentSpeedState = SpeedState.Sprint;
+			return;
+		}
+
+		CurrentSpeedState = SpeedState.Walk;
+
+	}
+
+}
