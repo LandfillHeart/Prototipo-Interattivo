@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
 	[SerializeField] private float horizontalOffsetTPS;
 	[SerializeField] private PlayerController player;
 
+	public float DistanceFromPlayer => distanceFromPlayerTPS;
+
 	private Vector3 cameraVerticalOffset = Vector3.zero;
 
 	private enum CameraMode
@@ -22,6 +24,7 @@ public class CameraController : MonoBehaviour
 	{
 		cameraVerticalOffset.y = verticalOffsetTPS;
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 		cam.transform.position = player.transform.position + cameraVerticalOffset + player.transform.forward * -1 * distanceFromPlayerTPS + player.transform.right * horizontalOffsetTPS;
 		
 	}
