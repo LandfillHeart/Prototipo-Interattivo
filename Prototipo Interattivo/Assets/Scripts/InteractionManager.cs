@@ -34,13 +34,27 @@ public class InteractionManager : MonoBehaviour
 		if(lastHitInteractable != null && rayHit.collider.gameObject == lastHitInteractable.gameObject)
 		{
 			// TOGGLE ON INTERACTABLE HUD
-			lastHitInteractable.AttemptInteraction();
 			return;
 		}
 
 		rayHit.collider.TryGetComponent<Interactable>(out lastHitInteractable);
-		lastHitInteractable.AttemptInteraction();
 		// TOGGLE ON INTERACTABLE HUD
+	}
+
+	public void AttemptInteract()
+	{
+		if (!inInteractionRange)
+		{
+			return;
+		}
+
+		if(!lastHitInteractable)
+		{
+			return;
+		}
+
+		lastHitInteractable.AttemptInteraction();
+
 	}
 
 }

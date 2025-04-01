@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IEntityComponent
 {
 	[SerializeField] private float walkingSpeed = 1f;
 	[SerializeField] private float sprintSpeed = 3f;
 
 	[SerializeField] private float jumpHeight = 10f;
+
+	private LandfillEntity parentEntity;
+	public LandfillEntity ParentEntity => parentEntity;
 
 	public Vector3 MovementDirection
 	{
@@ -50,10 +53,16 @@ public class Movement : MonoBehaviour
 		_ => walkingSpeed,
 	};
 
+	private void Awake()
+	{
+		parentEntity = GetComponent<LandfillEntity>();
+	}
+
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		currentSpeedState = SpeedState.Walk;
+		parentEntity.landfillAnimator.PlayIdleAnimation();
 	}
 
 	private void FixedUpdate()
@@ -86,9 +95,20 @@ public class Movement : MonoBehaviour
 		// we don't want our calculations messed with by jumping
 		if (direction == Vector3.zero)
 		{
+			parentEntity.landfillAnimator.PlayIdleAnimation();
 			// try to force our stop when player stops pressing inputs - remove slide
 			rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude), ForceMode.VelocityChange);
 			return;
+		}
+
+		switch(CurrentSpeedState)
+		{
+			case SpeedState.Walk:
+				parentEntity.landfillAnimator.PlayWalkAnimation();
+				break;
+			case SpeedState.Sprint:
+				parentEntity.landfillAnimator.PlayRunAnimation();
+				break;
 		}
 
 		if (horizontalVelocity.magnitude > currentMaxSpeed)
