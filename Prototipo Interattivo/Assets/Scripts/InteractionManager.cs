@@ -15,7 +15,7 @@ public class InteractionManager : MonoBehaviour
 	private void Start()
 	{
 		cameraController = GetComponent<CameraController>();
-		interactableLayer = LayerMask.NameToLayer("Interactable");
+		interactableLayer = LayerMask.GetMask("Interactable");
 	}
 
 	// This function allows us to check if we are within range to interact with an item in the scene and caches the result to prevent constant GetComponent calls
