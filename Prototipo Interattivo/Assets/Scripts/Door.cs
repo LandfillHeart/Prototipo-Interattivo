@@ -6,7 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 	[Serializable]
-	public struct DoorDetails
+	public class DoorDetails
 	{
 		public Transform doorTransform;
 		public Vector3 startRotation;

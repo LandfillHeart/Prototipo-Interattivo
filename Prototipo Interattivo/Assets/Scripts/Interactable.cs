@@ -9,20 +9,28 @@ public class Interactable : MonoBehaviour
 	[Tooltip("This is only used when limitedInteractions is true")]
 	[SerializeField] private int maxSuccessfulInteractions;
 
+
+	[Tooltip("Replaces the Press F to text in HUD")] [SerializeField] public string interactionPromptPrefix = "Press F to";
+	[SerializeField] public string interactionPrompt = "Interact";
+	[SerializeField] public string maxInteractionsReachedPrompt;
+
 	public Action interactionSuccess;
 	public Action interactionFail;
 
 	private int successfulInteractions;
+	private bool interactionsEnabled = true;
 
 	public bool ConditionsMet {
 		get {
 			if (!InteractionsEnabled) return false;
-			if (limitedInteractions && successfulInteractions >= maxSuccessfulInteractions) return false;
+			if (MaxInteractionsReached) return false;
 			return true;
 		}
 	}
 
-	private bool interactionsEnabled = true;
+	public bool MaxInteractionsReached => limitedInteractions && successfulInteractions >= maxSuccessfulInteractions;
+
+
 	public bool InteractionsEnabled
 	{
 		get => interactionsEnabled;
@@ -35,11 +43,12 @@ public class Interactable : MonoBehaviour
 		{
 			interactionSuccess?.Invoke();
 			successfulInteractions++;
+			UIManager.Instance.SetInteractionPrompt(this);
 			return;
 		}
 
 		interactionFail?.Invoke();
-
+		UIManager.Instance.SetInteractionPrompt(this);
 	}
 
 	

@@ -26,6 +26,7 @@ public class InteractionManager : MonoBehaviour
 		{
 			inInteractionRange = false;
 			// TOGGLE OFF INTERACTABLE HUD
+			UIManager.Instance.ToggleInteractionPrompt(false);
 			return;
 		}
 
@@ -33,12 +34,14 @@ public class InteractionManager : MonoBehaviour
 
 		if(lastHitInteractable != null && rayHit.collider.gameObject == lastHitInteractable.gameObject)
 		{
-			// TOGGLE ON INTERACTABLE HUD
+			// TOGGLE ON INTERACTABLE HUD - CONTENT IS CACHED IN UIMANAGER
+			UIManager.Instance.ToggleInteractionPrompt(true);
 			return;
 		}
 
 		rayHit.collider.TryGetComponent<Interactable>(out lastHitInteractable);
-		// TOGGLE ON INTERACTABLE HUD
+		// TOGGLE ON INTERACTABLE HUD AND SET CONTENT
+		UIManager.Instance.SetInteractionPrompt(lastHitInteractable);
 	}
 
 	public void AttemptInteract()
