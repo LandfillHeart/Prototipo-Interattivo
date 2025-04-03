@@ -67,6 +67,7 @@ public class Movement : MonoBehaviour, IEntityComponent
 
 	private void FixedUpdate()
 	{
+		// velocity relative to the direction we are facing - rb.linearVelocity is relative to world coordinates (e.g. we could be walking forward, but in world coords we are moving backwards x or z < 0f)
 		relativeVelocity = Quaternion.Inverse(transform.rotation) * rb.linearVelocity;
 		horizontalVelocity.x = relativeVelocity.x;
 		horizontalVelocity.z = relativeVelocity.z;
@@ -77,7 +78,7 @@ public class Movement : MonoBehaviour, IEntityComponent
 			Jump();
 		}
 
-		Move(movementDirection);
+		if (!parentEntity.MovementLocked) Move(movementDirection); else Stop();
 
 		// Unity gravity will always feel "floaty" because of exagerated jumps. Applies double gravity when falling
 		if (rb.linearVelocity.y < 0f)
@@ -95,9 +96,8 @@ public class Movement : MonoBehaviour, IEntityComponent
 		// we don't want our calculations messed with by jumping
 		if (direction == Vector3.zero)
 		{
-			parentEntity.landfillAnimator.PlayIdleAnimation();
 			// try to force our stop when player stops pressing inputs - remove slide
-			rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude), ForceMode.VelocityChange);
+			Stop();
 			return;
 		}
 
@@ -118,6 +118,13 @@ public class Movement : MonoBehaviour, IEntityComponent
 			return;
 		}
 		rb.AddRelativeForce(direction.normalized * currentMaxSpeed, ForceMode.VelocityChange);
+	}
+
+	// This allows LandfillEntity to stop itself without relying on fixed time logic
+	public void Stop()
+	{
+		rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude), ForceMode.VelocityChange);
+		parentEntity.landfillAnimator.PlayIdleAnimation();
 	}
 
 	private void Jump()

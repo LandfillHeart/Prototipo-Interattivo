@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent (typeof(CameraController))]
 public class InteractionManager : MonoBehaviour
 {
+	[SerializeField] private LandfillEntity playerEntity;
 	[SerializeField] private float maxInteractionDistance;
 
 	private CameraController cameraController;
@@ -56,7 +57,7 @@ public class InteractionManager : MonoBehaviour
 			return;
 		}
 
-		lastHitInteractable.AttemptInteraction();
+		lastHitInteractable.AttemptInteraction(playerEntity);
 
 	}
 
