@@ -81,10 +81,12 @@ public class Movement : MonoBehaviour, IEntityComponent
 		if (!parentEntity.MovementLocked) Move(movementDirection); else Stop();
 
 		// Unity gravity will always feel "floaty" because of exagerated jumps. Applies double gravity when falling
+		// NOTE: currently removed this because it works best for FPS games, this project is TPS and the jump height is very short it's better to use unity's animation
+		/*
 		if (rb.linearVelocity.y < 0f)
 		{
 			rb.AddForce(Vector3.down * -Physics.gravity.y * 2, ForceMode.Acceleration);
-		}
+		}*/
 
 	}
 

@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 	public static UIManager Instance => instance;
 
 	[SerializeField] private InventoryUI inventoryUI;
+	[SerializeField] private TalkingHeadUI talkingHeadUI; 
 	[SerializeField] private TextMeshProUGUI interactionPrompt;
 	 
 	private void Awake()
@@ -31,5 +32,14 @@ public class UIManager : MonoBehaviour
 		interactionPrompt.enabled = state;
 	}
 
+	public void ToggleTalkingHeadUI(bool state)
+	{
+		talkingHeadUI.Toggle(state);
+	}
+
+	public void SetSpeechBubbleContent(string newContent)
+	{
+		talkingHeadUI.SetSpeechBubbleContent(newContent);
+	}
 
 }

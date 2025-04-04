@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b424ab66f53a0aa4d8cb2df8d7966ff5, type: 3}
+  m_Name: Tutorial Dialogues
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "Benvenuto Avventuriero! Oggi ti insegner\xF2 come diventare un eroe. \nGuardati
+    intorno con il mouse e cammina con WASD. Premendo SHIFT puoi attivare e disattivare
+    la corsa.\nAdesso trova la tua spada... ehm, dovrebbe essere qui da qualche parte,
+    cercala perfavore!"
