@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
 	[SerializeField] private bool playInteractionAnimationOnFailure;
 	[Header("Interaction Settings")]
 	[SerializeField] private bool interactionItemRequired;
+	[Tooltip("This is only used when interacionItemRequired is set to true")] [SerializeField] private ItemData requiredItem;
 	[SerializeField] private bool limitedInteractions;
 	[Tooltip("This is only used when limitedInteractions is true")]
 	[SerializeField] private int maxSuccessfulInteractions;
@@ -43,7 +44,7 @@ public class Interactable : MonoBehaviour
 
 	public void AttemptInteraction(LandfillEntity entity)
 	{
-		if(ConditionsMet)
+		if(ConditionsMet && ItemRequirementMet(entity))
 		{
 			interactionSuccess?.Invoke();
 			successfulInteractions++;
@@ -55,6 +56,14 @@ public class Interactable : MonoBehaviour
 		interactionFail?.Invoke();
 		UIManager.Instance.SetInteractionPrompt(this);
 		entity.Interact(playInteractionAnimationOnFailure);
+	}
+
+	private bool ItemRequirementMet(LandfillEntity entity)
+	{
+		if (!interactionItemRequired) return true;
+		if (entity.inventory.items.Count == 0) return false;
+		return (entity.inventory.CurrentItem == requiredItem);
+
 	}
 
 }
