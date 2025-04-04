@@ -6,6 +6,7 @@ public class LandfillEntity : MonoBehaviour
 {
 	public Movement movement;
 	public LandfillAnimator landfillAnimator;
+	public Inventory inventory;
 	// I could probably toggle on/off movement actions, but for now I want to do it with just a bool to reduce risk of things breaking
 	private bool movementLocked = false;
 	public bool MovementLocked
@@ -24,6 +25,7 @@ public class LandfillEntity : MonoBehaviour
 	{
 		movement = GetComponent<Movement>();
 		landfillAnimator = GetComponent<LandfillAnimator>();
+		inventory = GetComponent<Inventory>();
 	}
 
 	public void Interact(bool playAnimation)

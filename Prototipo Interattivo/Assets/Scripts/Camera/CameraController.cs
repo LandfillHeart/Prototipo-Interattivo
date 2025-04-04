@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 	[SerializeField] private float verticalOffsetTPS;
 	[SerializeField] private float distanceFromPlayerTPS;
 	[SerializeField] private float horizontalOffsetTPS;
-	[SerializeField] private PlayerController player;
+	private PlayerController player;
 
 	public float DistanceFromPlayer => distanceFromPlayerTPS;
 
@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
 
 	private void Start()
 	{
+		player = GameManager.Instance.playerController;
 		cameraVerticalOffset.y = verticalOffsetTPS;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private InputActionAsset inputActionAsset;
 
-	[SerializeField] private CameraController cameraController;
-	[SerializeField] private InteractionManager interactionManager;
+	[NonSerialized] public CameraController cameraController;
+	[NonSerialized] public InteractionManager interactionManager;
 	[SerializeField] private LandfillEntity playerEntity;
 
 	[SerializeField] private Transform cameraPivot;

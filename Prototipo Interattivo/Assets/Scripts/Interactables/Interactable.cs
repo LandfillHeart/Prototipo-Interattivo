@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-	// TO-DO add an inventory item type and set it as an optional for interactions\
+	// TO-DO add an inventory item type and set it as an optional for interactions
+	[Header("Animations")]
 	[SerializeField] private bool playInteractionAnimationOnSuccess;
 	[SerializeField] private bool playInteractionAnimationOnFailure;
+	[Header("Interaction Settings")]
 	[SerializeField] private bool interactionItemRequired;
 	[SerializeField] private bool limitedInteractions;
 	[Tooltip("This is only used when limitedInteractions is true")]
 	[SerializeField] private int maxSuccessfulInteractions;
 
-
+	[Header("UI Prompts")]
 	[Tooltip("Replaces the Press F to text in HUD")] [SerializeField] public string interactionPromptPrefix = "Press F to";
 	[SerializeField] public string interactionPrompt = "Interact";
 	[SerializeField] public string maxInteractionsReachedPrompt;

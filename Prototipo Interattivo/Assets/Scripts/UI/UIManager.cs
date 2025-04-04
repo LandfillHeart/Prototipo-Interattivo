@@ -6,8 +6,9 @@ public class UIManager : MonoBehaviour
 	private static UIManager instance;
 	public static UIManager Instance => instance;
 
+	[SerializeField] private InventoryUI inventoryUI;
 	[SerializeField] private TextMeshProUGUI interactionPrompt;
-
+	 
 	private void Awake()
 	{
 		instance = this;

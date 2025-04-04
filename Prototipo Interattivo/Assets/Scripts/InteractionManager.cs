@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent (typeof(CameraController))]
 public class InteractionManager : MonoBehaviour
 {
-	[SerializeField] private LandfillEntity playerEntity;
+	private LandfillEntity playerEntity;
 	[SerializeField] private float maxInteractionDistance;
 
 	private CameraController cameraController;
@@ -13,10 +13,15 @@ public class InteractionManager : MonoBehaviour
 
 	private bool inInteractionRange;
 
-	private void Start()
+	private void Awake()
 	{
 		cameraController = GetComponent<CameraController>();
 		interactableLayer = LayerMask.GetMask("Interactable");
+	}
+
+	private void Start()
+	{
+		playerEntity = GameManager.Instance.playerEntity;
 	}
 
 	// This function allows us to check if we are within range to interact with an item in the scene and caches the result to prevent constant GetComponent calls
