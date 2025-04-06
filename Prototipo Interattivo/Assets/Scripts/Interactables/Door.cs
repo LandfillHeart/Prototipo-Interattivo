@@ -12,7 +12,6 @@ public class Door : MonoBehaviour
 		public Vector3 startRotation;
 		public Vector3 endRotation;
 	}
-
 	[SerializeField] private DoorDetails[] doorDetails;
 	[SerializeField] private float rotationTime;
 	

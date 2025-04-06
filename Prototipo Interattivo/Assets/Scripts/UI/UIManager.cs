@@ -39,7 +39,12 @@ public class UIManager : MonoBehaviour
 
 	public void SetSpeechBubbleContent(string newContent)
 	{
-		talkingHeadUI.SetSpeechBubbleContent(newContent);
+		if(newContent == null || newContent.Length == 0)
+		{
+			//ToggleTalkingHeadUI(false);
+			return;
+		}
+ 		talkingHeadUI.SetSpeechBubbleContent(newContent);
 	}
 
 }
