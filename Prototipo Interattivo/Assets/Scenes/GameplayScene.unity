@@ -8765,7 +8765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680257125181512181, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
       propertyPath: maxInteractionsReachedPrompt
-      value: Non penso ti facciaciano bene tutte queste pozioni...
+      value: Non penso ti facciano bene tutte queste pozioni...
       objectReference: {fileID: 0}
     - target: {fileID: 9009343358134272354, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
       propertyPath: m_LocalPosition.x
