@@ -13,6 +13,18 @@ public class Movement : MonoBehaviour, IEntityComponent
 	private LandfillEntity parentEntity;
 	public LandfillEntity ParentEntity => parentEntity;
 
+	public float WalkingSpeed
+	{
+		get => walkingSpeed;
+		set => walkingSpeed = value;
+	}
+
+	public float SprintSpeed
+	{
+		get => sprintSpeed;
+		set => sprintSpeed = value;
+	}
+
 	public Vector3 MovementDirection
 	{
 		get => movementDirection;
