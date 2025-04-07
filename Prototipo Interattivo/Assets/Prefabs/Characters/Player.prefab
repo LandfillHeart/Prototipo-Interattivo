@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0b41040d5832a4e9b14553161e414a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 1
-  sprintSpeed: 3
+  walkingSpeed: 0.5
+  sprintSpeed: 1.5
   jumpHeight: 3.5
   horizontalVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5329339915716044732
@@ -169,6 +169,8 @@ MonoBehaviour:
   LandfillAnimator: {fileID: 0}
   Inventory: {fileID: 0}
   Health: {fileID: 0}
+  HitBox: {fileID: 0}
+  RigidBody: {fileID: 0}
 --- !u!114 &1615340065105726461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +293,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3862085102932151524, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: -2922051811116512275, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: -3198420049219177596, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: 2856234247975315476, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: -4025133613917730222, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: 3899312069614297733, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
+    - {fileID: -7232241048097875652, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4a2655b97c92034fa9ca698b1b94843, type: 3}

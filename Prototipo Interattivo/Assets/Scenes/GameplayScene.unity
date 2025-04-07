@@ -8745,11 +8745,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680257125181512181, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
       propertyPath: limitedInteractions
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5680257125181512181, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
       propertyPath: maxSuccessfulInteractions
-      value: 0
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680257125181512181, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
+      propertyPath: maxInteractionsReachedPrompt
+      value: Non penso ti facciaciano bene tutte queste pozioni...
       objectReference: {fileID: 0}
     - target: {fileID: 9009343358134272354, guid: 45ffb9971c2a1814089bf8804a30c2e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34289,6 +34293,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &7518020063543316017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.701
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102464857161435572, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916297403018105614, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
+      propertyPath: m_Name
+      value: Wand Pickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ed18876c5237e6439f628406bab1bc1, type: 3}
 --- !u!1001 &8029962794739129113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34427,3 +34488,4 @@ SceneRoots:
   - {fileID: 8029962794739129113}
   - {fileID: 389303730}
   - {fileID: 2027902335}
+  - {fileID: 7518020063543316017}
