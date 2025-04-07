@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
 		itemUsed?.Invoke();
 		if(consumable)
 		{
-			ItemUser.Inventory.RemoveItem(data);
+			ItemUser.Inventory.RemoveItem();
 		}
 	}
 

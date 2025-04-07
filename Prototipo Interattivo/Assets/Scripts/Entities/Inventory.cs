@@ -58,28 +58,18 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		itemSwitched?.Invoke(); // this works well for updating the UI
 	}
 
-	public void RemoveItem(ItemData data)
+	public void RemoveItem()
 	{
-		Item itemToRemove = null;
-		foreach (Item item in items)
-		{
-			if(item.Data == data)
-			{
-				itemToRemove = item;
-				break;
-			}
-		}
-		if(itemToRemove == null) { 
-			return; 
-		}
-		SwitchEquippedItem(true);
-		items.Remove(itemToRemove);
-		itemSwitched?.Invoke();
+		Item itemCache = items[equippedItemIndex];
+		items.RemoveAt(equippedItemIndex);
+		Destroy(itemCache.gameObject);
+		SwitchEquippedItem(shiftToRight: true, itemRemoved: true);
 	}
 
-	public void SwitchEquippedItem(bool shiftToRight)
+	public void SwitchEquippedItem(bool shiftToRight, bool itemRemoved = false)
 	{
 		int indexShift = shiftToRight ? 1 : -1;
+		if (itemRemoved) equippedItemIndex--;
 		int newIndex = equippedItemIndex + indexShift;
 
 		if (newIndex < 0)
@@ -87,11 +77,15 @@ public class Inventory : MonoBehaviour, IEntityComponent
 			newIndex = items.Count - 1;
 		}
 
-		if (newIndex == items.Count) 
+		if (newIndex >= items.Count) 
 		{
 			newIndex = 0;
 		}
-		items[equippedItemIndex].gameObject.SetActive(false);
+
+		if(!itemRemoved)
+		{
+			items[equippedItemIndex].gameObject.SetActive(false);
+		}
 		equippedItemIndex = newIndex;
 		items[equippedItemIndex].gameObject.SetActive(true);
 		itemSwitched?.Invoke();

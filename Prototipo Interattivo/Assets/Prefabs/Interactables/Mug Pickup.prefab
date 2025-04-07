@@ -1,103 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6400722966118989501
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.176
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.176
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.176
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.413312
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25537598
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.62262404
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855698
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_Name
-      value: Mug Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6192923447164634860}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8120344700435808319}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1396801321034302208}
-  m_SourcePrefab: {fileID: 100100000, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
---- !u!1 &6058052272569041900 stripped
+--- !u!1 &4450565704787572632
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
-  m_PrefabInstance: {fileID: 6400722966118989501}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6192923447164634860
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9009343358134272354}
+  - component: {fileID: 6400687445487380772}
+  - component: {fileID: 262889399236934851}
+  - component: {fileID: 5680257125181512181}
+  - component: {fileID: 4548339594811546695}
+  - component: {fileID: 481912184316982598}
+  m_Layer: 6
+  m_Name: Mug Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9009343358134272354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450565704787572632}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000059604645, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.008700111, y: 0.14509998, z: -0.0075999885}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6400687445487380772
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450565704787572632}
+  m_Mesh: {fileID: 4079907246637844304, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
+--- !u!23 &262889399236934851
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450565704787572632}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -7423125517761585655, guid: 5c892bea2b497e84181e6e31ad97eec1, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5680257125181512181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058052272569041900}
+  m_GameObject: {fileID: 4450565704787572632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d52b8f670173d34cbc855ccf2dfe602, type: 3}
@@ -112,13 +110,13 @@ MonoBehaviour:
   interactionPromptPrefix: Premi F per
   interactionPrompt: Raccogliere
   maxInteractionsReachedPrompt: 
---- !u!114 &8120344700435808319
+--- !u!114 &4548339594811546695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058052272569041900}
+  m_GameObject: {fileID: 4450565704787572632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 438035a8d1122e84890b5f097a77b529, type: 3}
@@ -126,13 +124,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 714c83db9f65c2744a70cb269616e2e3, type: 2}
   hideOnPickup: 1
---- !u!65 &1396801321034302208
+--- !u!65 &481912184316982598
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058052272569041900}
+  m_GameObject: {fileID: 4450565704787572632}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -141,7 +139,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

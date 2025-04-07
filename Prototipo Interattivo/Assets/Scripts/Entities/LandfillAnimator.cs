@@ -21,7 +21,7 @@ public class LandfillAnimator : MonoBehaviour, IEntityComponent
 		if (animationLocked && animator.GetCurrentAnimatorStateInfo(0).IsName(lockingAnimation) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
 		{
 			animationLocked = false;
-			// animator.CrossFade("Idle", 0f);
+			animator.CrossFade("Idle", 0f);
 			parentEntity.MovementLocked = false;
 		}
 	}
