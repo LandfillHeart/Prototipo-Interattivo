@@ -131,7 +131,7 @@ public class Movement : MonoBehaviour, IEntityComponent
 
 	private void Jump()
 	{
-		if (!IsGrounded())
+		if (!IsGrounded() || parentEntity.MovementLocked)
 		{
 			return;
 		}

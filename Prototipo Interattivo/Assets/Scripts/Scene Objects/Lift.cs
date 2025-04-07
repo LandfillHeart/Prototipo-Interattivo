@@ -67,15 +67,17 @@ public class Lift : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionEnter(Collision collision)
+	private void OnTriggerEnter(Collider other)
 	{
+		// dont kill when headbutting a stopped lift
+		if(pause) { return; }
+
 		// kill entity when crushed by lift
 		// in this prototype collider only includes entity layer, so getcomponent can't fail
-		if(collision.transform.position.y < transform.position.y)
+		if (other.transform.position.y < transform.position.y)
 		{
-			LandfillEntity entity = collision.gameObject.GetComponent<LandfillEntity>();
+			LandfillEntity entity = other.gameObject.GetComponent<LandfillEntity>();
 			entity.Health.Kill();
 		}
 	}
-
 }

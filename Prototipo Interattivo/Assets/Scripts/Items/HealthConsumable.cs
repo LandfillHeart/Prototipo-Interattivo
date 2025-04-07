@@ -14,6 +14,7 @@ public class HealthConsumable : MonoBehaviour
 	private void OnUse()
 	{
 		item.ItemUser.Health.Heal(healthRestored);
+		item.ItemUser.LandfillAnimator.PlayInteractAnimation();
 	}
 
 }
