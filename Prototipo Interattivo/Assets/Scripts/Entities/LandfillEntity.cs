@@ -2,11 +2,14 @@ using UnityEngine;
 
 [RequireComponent (typeof(Movement))]
 [RequireComponent (typeof(LandfillAnimator))]
+[RequireComponent (typeof(Inventory))]
+[RequireComponent (typeof(Health))]
 public class LandfillEntity : MonoBehaviour
 {
-	public Movement movement;
-	public LandfillAnimator landfillAnimator;
-	public Inventory inventory;
+	public Movement Movement;
+	public LandfillAnimator LandfillAnimator;
+	public Inventory Inventory;
+	public Health Health;
 	// I could probably toggle on/off movement actions, but for now I want to do it with just a bool to reduce risk of things breaking
 	private bool movementLocked = false;
 	public bool MovementLocked
@@ -17,15 +20,16 @@ public class LandfillEntity : MonoBehaviour
 			movementLocked = value;
 			if (value == true)
 			{
-				movement.Stop();
+				Movement.Stop();
 			}
 		}
 	}
 	private void Awake()
 	{
-		movement = GetComponent<Movement>();
-		landfillAnimator = GetComponent<LandfillAnimator>();
-		inventory = GetComponent<Inventory>();
+		Movement = GetComponent<Movement>();
+		LandfillAnimator = GetComponent<LandfillAnimator>();
+		Inventory = GetComponent<Inventory>();
+		Health = GetComponent<Health>();
 	}
 
 	public void Interact(bool playAnimation)
@@ -35,7 +39,7 @@ public class LandfillEntity : MonoBehaviour
 			return;
 		}
 		MovementLocked = true;
-		landfillAnimator.PlayInteractAnimation();
+		LandfillAnimator.PlayInteractAnimation();
 		
 	}
 

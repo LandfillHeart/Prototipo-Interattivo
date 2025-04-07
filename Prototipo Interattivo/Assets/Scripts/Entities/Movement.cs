@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour, IEntityComponent
 	{
 		rb = GetComponent<Rigidbody>();
 		currentSpeedState = SpeedState.Walk;
-		parentEntity.landfillAnimator.PlayIdleAnimation();
+		parentEntity.LandfillAnimator.PlayIdleAnimation();
 	}
 
 	private void FixedUpdate()
@@ -106,10 +106,10 @@ public class Movement : MonoBehaviour, IEntityComponent
 		switch(CurrentSpeedState)
 		{
 			case SpeedState.Walk:
-				parentEntity.landfillAnimator.PlayWalkAnimation();
+				parentEntity.LandfillAnimator.PlayWalkAnimation();
 				break;
 			case SpeedState.Sprint:
-				parentEntity.landfillAnimator.PlayRunAnimation();
+				parentEntity.LandfillAnimator.PlayRunAnimation();
 				break;
 		}
 
@@ -126,7 +126,7 @@ public class Movement : MonoBehaviour, IEntityComponent
 	public void Stop()
 	{
 		rb.AddRelativeForce(-horizontalVelocity.normalized * (horizontalVelocity.magnitude), ForceMode.VelocityChange);
-		parentEntity.landfillAnimator.PlayIdleAnimation();
+		parentEntity.LandfillAnimator.PlayIdleAnimation();
 	}
 
 	private void Jump()

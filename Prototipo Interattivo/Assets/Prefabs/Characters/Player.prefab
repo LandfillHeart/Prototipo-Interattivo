@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5329339915716044732}
   - component: {fileID: 1615340065105726461}
   - component: {fileID: 1719562480835682835}
+  - component: {fileID: 3100446022391944128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,9 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33b02b73ef793b43be9d19582390e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 105523549970634721}
-  landfillAnimator: {fileID: 1615340065105726461}
-  inventory: {fileID: 1719562480835682835}
+  Movement: {fileID: 0}
+  LandfillAnimator: {fileID: 0}
+  Inventory: {fileID: 0}
+  Health: {fileID: 0}
 --- !u!114 &1615340065105726461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +196,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 2228415123951676894}
+--- !u!114 &3100446022391944128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970982769331263155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69306650c6a08348a06838aeca51da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  startingHealth: 50
 --- !u!1001 &8075658977347904240
 PrefabInstance:
   m_ObjectHideFlags: 0

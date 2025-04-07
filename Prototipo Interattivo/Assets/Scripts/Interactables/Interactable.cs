@@ -61,8 +61,8 @@ public class Interactable : MonoBehaviour
 	private bool ItemRequirementMet(LandfillEntity entity)
 	{
 		if (!interactionItemRequired) return true;
-		if (entity.inventory.items.Count == 0) return false;
-		return (entity.inventory.CurrentItem == requiredItem);
+		if (entity.Inventory.items.Count == 0) return false;
+		return (entity.Inventory.CurrentItem == requiredItem);
 
 	}
 

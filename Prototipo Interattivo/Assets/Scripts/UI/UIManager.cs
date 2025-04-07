@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,10 +10,20 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private InventoryUI inventoryUI;
 	[SerializeField] private TalkingHeadUI talkingHeadUI; 
 	[SerializeField] private TextMeshProUGUI interactionPrompt;
-	 
+	[SerializeField] private Image healthBar;
+
+	private LandfillEntity player;
+
 	private void Awake()
 	{
 		instance = this;
+	}
+
+	private void Start()
+	{
+		player = GameManager.Instance.playerEntity;
+		player.Health.healthChanged += UpdateHealthBar;
+		UpdateHealthBar();
 	}
 
 	public void SetInteractionPrompt(Interactable interactable)
@@ -45,6 +56,11 @@ public class UIManager : MonoBehaviour
 			return;
 		}
  		talkingHeadUI.SetSpeechBubbleContent(newContent);
+	}
+
+	public void UpdateHealthBar()
+	{
+		healthBar.fillAmount = player.Health.CurrentHealth / player.Health.MaxHealth;
 	}
 
 }

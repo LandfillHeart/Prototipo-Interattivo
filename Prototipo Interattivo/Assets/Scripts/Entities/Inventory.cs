@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour, IEntityComponent
 	[SerializeField] private Transform hand;
 
 	public Action itemSwitched;
-	public ItemData CurrentItem => items[equippedItemIndex].data;
+	public ItemData CurrentItem => items[equippedItemIndex].Data;
 
 	public ItemData NextItem
 	{
@@ -21,9 +21,9 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		{
 			if (equippedItemIndex + 1 == items.Count)
 			{
-				return items[0].data;
+				return items[0].Data;
 			}
-			return items[equippedItemIndex + 1].data;
+			return items[equippedItemIndex + 1].Data;
 		}
 	}
 
@@ -33,10 +33,10 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		{
 			if (equippedItemIndex - 1 < 0)
 			{
-				return items[items.Count - 1].data;
+				return items[items.Count - 1].Data;
 			}
 
-			return items[equippedItemIndex - 1].data;
+			return items[equippedItemIndex - 1].Data;
 		}
 	}
 
@@ -54,6 +54,25 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		{
 			SwitchEquippedItem(true);
 		}
+		itemSwitched?.Invoke(); // this works well for updating the UI
+	}
+
+	public void RemoveItem(ItemData data)
+	{
+		Item itemToRemove = null;
+		foreach (Item item in items)
+		{
+			if(item.Data == data)
+			{
+				itemToRemove = item;
+				break;
+			}
+		}
+		if(itemToRemove == null) { 
+			return; 
+		}
+		items.Remove(itemToRemove);
+
 	}
 
 	public void SwitchEquippedItem(bool shiftToRight)
@@ -70,7 +89,7 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		{
 			newIndex = 0;
 		}
-
+		items[equippedItemIndex].gameObject.SetActive(false);
 		equippedItemIndex = newIndex;
 		items[equippedItemIndex].gameObject.SetActive(true);
 		itemSwitched?.Invoke();

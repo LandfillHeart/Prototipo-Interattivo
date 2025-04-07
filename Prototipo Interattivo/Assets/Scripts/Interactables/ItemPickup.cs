@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
 	[SerializeField] private ItemData itemData;
+	[SerializeField] private bool hideOnPickup;
 	private Interactable interactable;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -13,7 +14,11 @@ public class ItemPickup : MonoBehaviour
 
 	private void PickupItem()
 	{
-		GameManager.Instance.playerEntity.inventory.AddItem(itemData);
+		GameManager.Instance.playerEntity.Inventory.AddItem(itemData);
+		if (hideOnPickup)
+		{
+			gameObject.SetActive(false);
+		}
 	}
 
 }

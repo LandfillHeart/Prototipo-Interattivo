@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
 
 	private void Start()
 	{
-		playerInventory = GameManager.Instance.playerEntity.inventory;
+		playerInventory = GameManager.Instance.playerEntity.Inventory;
 		playerInventory.itemSwitched += UpdateInventoryUI;
 	}
 
