@@ -2360,6 +2360,7 @@ MonoBehaviour:
   cameraController: {fileID: 1644490453}
   interactionManager: {fileID: 1644490452}
   tutorialDialogue: {fileID: 11400000, guid: 06b2405559882244a99e59d6c02b0fd7, type: 2}
+  RespawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &380805283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2498,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbdd5c91240bd9a4c9d881d55b2cdae0, type: 3}
   m_PrefabInstance: {fileID: 388965642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &389303730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 370120869052207210, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_Name
+      value: Simple Lift
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038429722559679184, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466043430968851389, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: endPosition.x
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466043430968851389, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: endPosition.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466043430968851389, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: startingPosition.x
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466043430968851389, guid: 570fdfda380820d4aa00547820831006, type: 3}
+      propertyPath: startingPosition.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 570fdfda380820d4aa00547820831006, type: 3}
 --- !u!1001 &397585288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7637,6 +7711,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16d20eba7b192024d91a5d7803b1b4a5, type: 3}
   m_PrefabInstance: {fileID: 1267539002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1268013030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268013033}
+  - component: {fileID: 1268013032}
+  - component: {fileID: 1268013031}
+  - component: {fileID: 1268013034}
+  m_Layer: 0
+  m_Name: Tutorial Lift
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1268013031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268013030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846e5f1d5a883cd459010534d82cf278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: 'Premi SPAZIO per saltare.
+
+    Sali su questo ascensore per proseguire!
+
+    Attento
+    a non farti schiacciare.'
+--- !u!65 &1268013032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268013030}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5461836, y: 1, z: 0.3962021}
+  m_Center: {x: 0.7730918, y: 0, z: -0.30189896}
+--- !u!4 &1268013033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268013030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.107, y: 0.376, z: 3.029}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268013034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268013030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b310f8e22151bf5428e3c252d8fead17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newRespawnPoint: {x: 12, y: 0.5, z: 2.5}
 --- !u!1001 &1283170864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13608,3 +13768,5 @@ SceneRoots:
   - {fileID: 2084524795}
   - {fileID: 2037907097}
   - {fileID: 1246452399}
+  - {fileID: 1268013033}
+  - {fileID: 389303730}

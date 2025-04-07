@@ -18,10 +18,10 @@ public class LandfillAnimator : MonoBehaviour, IEntityComponent
 
 	private void Update()
 	{
-		if(animationLocked && animator.GetCurrentAnimatorStateInfo(0).IsName(lockingAnimation) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+		if (animationLocked && animator.GetCurrentAnimatorStateInfo(0).IsName(lockingAnimation) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
 		{
 			animationLocked = false;
-			animator.CrossFade("Idle", 0f);
+			// animator.CrossFade("Idle", 0f);
 			parentEntity.MovementLocked = false;
 		}
 	}
@@ -52,6 +52,14 @@ public class LandfillAnimator : MonoBehaviour, IEntityComponent
 		animator.CrossFade("Interact", 0.1f);
 		animationLocked = true;
 		lockingAnimation = "Interact";
+	}
+
+	public void PlayDeathAnimation()
+	{
+		if (animator.GetCurrentAnimatorStateInfo(0).IsName("Lie_Down")) return;
+		animator.CrossFade("Lie_Down", 0.1f);
+		animationLocked = true;
+		lockingAnimation = "Lie_Down";
 	}
 
 }

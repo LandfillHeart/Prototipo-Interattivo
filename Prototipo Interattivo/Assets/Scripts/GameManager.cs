@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
 	[NonSerialized] public LandfillEntity playerEntity;
 	[NonSerialized] public PlayerController playerController;
 
+	[HideInInspector] public Vector3 RespawnPoint;
+
 	private void Awake()
 	{
 		instance = this;
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		UIManager.Instance.SetSpeechBubbleContent(tutorialDialogue.dialogues[0]);
+		playerEntity.Health.die += () => StartCoroutine(RespawnPlayer());
 	}
 
 	private void SetupPlayer()
@@ -37,6 +41,15 @@ public class GameManager : MonoBehaviour
 		playerController = playerEntity.GetComponent<PlayerController>();
 		playerController.cameraController = cameraController;
 		playerController.interactionManager = interactionManager;
+	}
+
+	private IEnumerator RespawnPlayer()
+	{
+		yield return new WaitForSeconds(2.5f);
+		playerEntity.Health.Heal(playerEntity.Health.MaxHealth);
+		playerEntity.transform.position = RespawnPoint;
+		playerEntity.CollisionEnabled = true;
+		playerEntity.MovementLocked = false;
 	}
 
 }

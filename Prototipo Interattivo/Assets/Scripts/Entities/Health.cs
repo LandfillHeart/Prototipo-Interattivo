@@ -53,4 +53,9 @@ public class Health : MonoBehaviour, IEntityComponent
 		CurrentHealth -= amount;
 	}
 
+	public void Kill()
+	{
+		Damage(MaxHealth);
+	}
+
 }
