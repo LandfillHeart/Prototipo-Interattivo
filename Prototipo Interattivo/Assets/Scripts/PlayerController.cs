@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 	private InputAction switchItemNext;
 	private InputAction switchItemPrevious;
 
+	private InputAction useItem;
+
 	private void Start()
 	{
 		playerActionMap = inputActionAsset.FindActionMap("Player");
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
 		interactAction = playerActionMap.FindAction("Interact");
 		switchItemNext = playerActionMap.FindAction("SwitchItemNext");
 		switchItemPrevious = playerActionMap.FindAction("SwitchItemPrevious");
+		useItem = playerActionMap.FindAction("UseItem");
 
 		lookAction.performed += ctx => cameraController.RotateCamera(ctx.ReadValue<Vector2>());
 		moveAction.performed += ctx => playerEntity.Movement.MovementDirection = ctx.ReadValue<Vector2>();
@@ -52,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
 		switchItemNext.started += ctx => playerEntity.Inventory.SwitchEquippedItem(true);
 		switchItemPrevious.started += ctx => playerEntity.Inventory.SwitchEquippedItem(false);
+
+		useItem.started += ctx => playerEntity.Inventory.UseEquippedItem();
 
 	}
 

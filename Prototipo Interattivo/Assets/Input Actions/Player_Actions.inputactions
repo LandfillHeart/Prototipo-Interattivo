@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "9eb99b4b-1ee5-4eb1-9ad4-ad1d216c5018",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -417,6 +426,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwitchItemPrevious",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "098eeb8c-95c0-4f6d-88f5-48de64c8146f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

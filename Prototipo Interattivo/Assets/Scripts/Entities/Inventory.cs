@@ -48,6 +48,7 @@ public class Inventory : MonoBehaviour, IEntityComponent
 	public void AddItem(ItemData data)
 	{
 		Item newItem = Instantiate(data.itemPrefab, hand).GetComponent<Item>();
+		newItem.ItemUser = parentEntity;
 		items.Add(newItem);
 		newItem.gameObject.SetActive(false);
 		if(items.Count == 1)
@@ -71,8 +72,9 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		if(itemToRemove == null) { 
 			return; 
 		}
+		SwitchEquippedItem(true);
 		items.Remove(itemToRemove);
-
+		itemSwitched?.Invoke();
 	}
 
 	public void SwitchEquippedItem(bool shiftToRight)
@@ -101,6 +103,9 @@ public class Inventory : MonoBehaviour, IEntityComponent
 		{
 			return;
 		}
+
+		items[equippedItemIndex].Use();
+
 	}
 
 
