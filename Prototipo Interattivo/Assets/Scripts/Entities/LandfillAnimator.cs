@@ -62,4 +62,12 @@ public class LandfillAnimator : MonoBehaviour, IEntityComponent
 		lockingAnimation = "Lie_Down";
 	}
 
+	public void PlayAttackAnimation()
+	{
+		if (animationLocked || parentEntity.MovementLocked || animator.GetCurrentAnimatorStateInfo(0).IsName("1H_Melee_Attack_Chop") || animator.GetCurrentAnimatorStateInfo(0).IsName("Interact") || animator.IsInTransition(0)) return;
+		animator.CrossFade("1H_Melee_Attack_Chop", 0.1f);
+		animationLocked = true;
+		lockingAnimation = "1H_Melee_Attack_Chop";
+	}
+
 }

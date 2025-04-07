@@ -47,6 +47,7 @@ public class Wand : MonoBehaviour
 
 		remainingCooldown = cooldown;
 		remainingDuration = duration;
+		item.ItemUser.LandfillAnimator.PlayAttackAnimation();
 		ApplyEffects();
 	}
 
